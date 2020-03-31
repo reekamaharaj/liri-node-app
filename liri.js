@@ -37,15 +37,33 @@ switch(command){
         */
 
     case "movie-this":
-        param = movie;
+        movie = param;
 
-        axios.get("http://www.omdbapi.com/?t="+  movie +"&y=&plot=short&apikey=trilogy").then(
+        axios.get("http://www.omdbapi.com/?t="+ movie +"&y=&plot=short&apikey=trilogy").then(
             function(response) {
-                output = "Movie Title: " + response.data.Title + ", Movie Release Year: " + response.data.Year + ", IMDB Rating: " + response.data.imdbRating + ", Rotten Tomatoes rating: " + response.data.Ratings[1] + ", Movie produced in: " + response.data.Country + "Language(s): " + response.data.Language + ", Movie plot: " + response.data.Plot + ", Actors: " + response.data.Actors
-            }
-        )
+                output = "Movie Title: " + response.data.Title + ", Movie Release Year: " + response.data.Year + ", IMDB Rating: " + response.data.imdbRating + ", Rotten Tomatoes rating: " + response.data.Ratings[1].Value + ", Movie produced in: " + response.data.Country + "Language(s): " + response.data.Language + ", Movie plot: " + response.data.Plot + ", Actors: " + response.data.Actors;
+                console.log(output);
+            }).catch(function(error) {
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    console.log("---------------Data---------------");
+                    console.log(error.response.data);
+                    console.log("---------------Status---------------");
+                    console.log(error.response.status);
+                    console.log("---------------Status---------------");
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    // `error.request` is an object that comes back with details pertaining to the error that occurred.
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log("Error", error.message);
+                }
+                console.log(error.config);
+            });
         movie = "Mr. Nobody";
-
         break;
 
         case "do-what-it-says":
@@ -57,15 +75,15 @@ switch(command){
 console.log(output);
 
 //append log.txt to contain what was in the output
-TODO: Need to get the formated in log.txt
-fs.appendFile("log.txt", ", " output, function(err) {
+//TODO: Need to get the formated in log.txt
+fs.appendFile("log.txt", ", " + output, function(err) {
     if (err) {
         return console.log(err);
     }
 });
 
 //read files will read what is in random.txt
-TODO: Write code to make this do something with the data it reads
+//TODO: Write code to make this do something with the data it reads
 fs.readFile("random.txt", "utf8", function(err, data){
     if (err) {
         return console.log(err);
