@@ -1,13 +1,15 @@
 // require("dotenv").config();
+const fs = require("fs");
 // const keys = require("./keys.js");
 // const spotify = new Spotify(keys.spotify);
+const axios = require("axios");
 
 let input = process.argv;
 
 let command = input[2];
 let param = input[3];
-let song;
-let movie;
+let movie = "Mr. Nobody";
+
 
 let output;
 
@@ -22,7 +24,7 @@ switch(command){
         */
     
     case "spotify-this-song":
-        param = song;
+
         output = "song info";
         break;
         /*
@@ -36,22 +38,15 @@ switch(command){
 
     case "movie-this":
         param = movie;
-        output = "movie info";
-        break;
-        /*
-            -- Title of the movie.
-            --- Year the movie came out.
-            --- IMDB Rating of the movie.
-            --- Rotten Tomatoes Rating of the movie.
-            --- Country where the movie was produced.
-            --- Language of the movie.
-            --- Plot of the movie.
-            --- Actors in the movie.
 
-            default option -> 'Mr. Nobody.'
-                using the axios package to get the OMDB API data
-                api key -> trilogy
-        */
+        axios.get("http://www.omdbapi.com/?t="+  movie +"&y=&plot=short&apikey=trilogy").then(
+            function(response) {
+                output = "Movie Title: " + response.data.Title + ", Movie Release Year: " + response.data.Year + ", IMDB Rating: " + response.data.imdbRating + ", Rotten Tomatoes rating: " + response.data.Ratings[1] + ", Movie produced in: " + response.data.Country + "Language(s): " + response.data.Language + ", Movie plot: " + response.data.Plot + ", Actors: " + response.data.Actors
+            }
+        )
+        movie = "Mr. Nobody";
+
+        break;
 
         case "do-what-it-says":
             output = "do what it says";
@@ -61,10 +56,18 @@ switch(command){
 
 console.log(output);
 
-/* 
+//append log.txt to contain what was in the output
+TODO: Need to get the formated in log.txt
+fs.appendFile("log.txt", ", " output, function(err) {
+    if (err) {
+        return console.log(err);
+    }
+});
 
-log data to log.txt
-append commands to log.txt, don't over write the files
-
-*/
-
+//read files will read what is in random.txt
+TODO: Write code to make this do something with the data it reads
+fs.readFile("random.txt", "utf8", function(err, data){
+    if (err) {
+        return console.log(err);
+    }
+})
