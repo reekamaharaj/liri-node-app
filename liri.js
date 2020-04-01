@@ -1,9 +1,9 @@
-// require("dotenv").config();
+require("dotenv").config();
 const fs = require("fs");
-// const keys = require("./keys.js");
+const keys = require("./keys.js");
 // const spotify = new Spotify(keys.spotify);
 const axios = require("axios");
-
+const bandsintown = require('bandsintown')("codingbootcamp");
 let input = process.argv;
 
 let command = input[2];
@@ -15,7 +15,9 @@ let output;
 
 switch(command){
     case "concert-this":
-        output = "https://rest.bandsintown.com/artists/" + param + "/events?app_id=codingbootcamp";
+        queryUrl = "https://rest.bandsintown.com/artists/" + param + "/events?app_id=codingbootcamp";
+
+       
         break;
         /*
             - name of the venue
@@ -38,8 +40,9 @@ switch(command){
 
     case "movie-this":
         movie = param;
-
-        axios.get("http://www.omdbapi.com/?t="+ movie +"&y=&plot=short&apikey=trilogy").then(
+        let queryUrl = "http://www.omdbapi.com/?t="+ movie +"&y=&plot=short&apikey=trilogy";
+        
+        axios.get(queryUrl).then(
             function(response) {
                 output = "Movie Title: " + response.data.Title + ", Movie Release Year: " + response.data.Year + ", IMDB Rating: " + response.data.imdbRating + ", Rotten Tomatoes rating: " + response.data.Ratings[1].Value + ", Movie produced in: " + response.data.Country + "Language(s): " + response.data.Language + ", Movie plot: " + response.data.Plot + ", Actors: " + response.data.Actors;
                 console.log(output);
