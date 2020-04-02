@@ -1,6 +1,3 @@
-//TODO: Need to format log.txt
-//TODO: Rotten Tomato rating problems
-
 require("dotenv").config();
 const fs = require("fs");
 const keys = require("./keys.js");
@@ -19,6 +16,7 @@ let artist = [];
 let output;
 let artistInput;
 let songInput;
+let outputTxt;
 
 if (command === "do-what-it-says") {
     random();
@@ -87,14 +85,15 @@ function concertThis() {
         .then(function(response) {
             for (var i = 0; i < 4; i++) {
 
-                output = "Concerts for " + artistInput;
-                console.group(output);
+                console.group("Concerts for " + artistInput);
                 console.info("Venue: " + response.data[i].venue.name );
                 console.info("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.region);
                 console.info("Date: " + moment(response.data[i].datetime).format("MM/DD/YYYY"));
                 console.groupEnd(output);
 
-                fs.appendFile("log.txt", ", " + output, function(error) {
+                outputTxt = "Concerts for " + artistInput + "\r\n " + "Venue: " + response.data[i].venue.name + "\r\n" + "Location: " + response.data[i].venue.city + ", " + response.data[i].venue.region + "\r\n" + "Date: " + moment(response.data[i].datetime).format("MM/DD/YYYY") + "\r\n" ;
+
+                fs.appendFile("log.txt", "\r\n " + outputTxt, function(error) {
                     if (error) {
                         return console.log(error);
                     }
@@ -114,15 +113,17 @@ function songThis() {
         .search({ type: "track", query: song })
         .then(function(response) {
             for (var i = 0; i < 4; i++) {
-                output = "Song Input " + songInput;
-                console.group(output);
+                
+                console.group("Song Input " + songInput);
                 console.info("Artist: " + response.tracks.items[i].artists[0].name);
                 console.info("Song name: " + response.tracks.items[i].name);
                 console.info("Preview URL:  " + response.tracks.items[i].preview_url);
                 console.info("Album the song is on: " + response.tracks.items[i].album.name);
                 console.groupEnd(output);
 
-                fs.appendFile("log.txt", ", " + output, function(error) {
+                outputTxt = "Song Input " + songInput + "\r\n " + "Artist: " + response.tracks.items[i].artists[0].name + "\r\n " + "Song name: " + response.tracks.items[i].name + "\r\n " + "Preview URL:  " + response.tracks.items[i].preview_url + "\r\n " + "Album the song is on: " + response.tracks.items[i].album.name + "\r\n ";
+
+                fs.appendFile("log.txt", "\r\n " + outputTxt, function(error) {
                     if (error) {
                         return console.log(error);
                     }
@@ -141,19 +142,20 @@ function movieThis() {
     axios
         .get(queryUrlOmdb)
         .then(function(response) {
-            output =  "Movie Title: " + response.data.Title;
-            console.group(output);
+            
+            console.group("Movie Title: " + response.data.Title);
             console.info("Movie Release Year: " + response.data.Year);
             console.info("IMDB Rating: " + response.data.imdbRating);
+            console.info("Rotten Tomatoes rating: " + response.data.Ratings[1].Value);
             console.info("Movie produced in: " + response.data.Country);
             console.info("Language(s): " + response.data.Language);
             console.info("Movie plot: " + response.data.Plot);
             console.info("Actors: " + response.data.Actors);
             console.groupEnd(output);
 
-            // rating = ", Rotten Tomatoes rating: " + response.data.Ratings[1].Value;
+            outputTxt = "Movie Title: " + response.data.Title + "\r\n " + "Movie Release Year: " + response.data.Year + "\r\n " + "IMDB Rating: " + response.data.imdbRating + "Rotten Tomatoes rating: " + response.data.Ratings[1].Value + "\r\n" + "Movie produced in: " + response.data.Country + "\r\n " + "Language(s): " + response.data.Language + "\r\n " + "Movie plot: " + response.data.Plot + "\r\n " + "Actors: " + response.data.Actors + "\r\n " + "Rotten Tomatoes rating: " + response.data.Ratings[1].Value + "\r\n";
 
-            fs.appendFile("log.txt", ", " + output, function(error) {
+            fs.appendFile("log.txt", "\r\n " + outputTxt, function(error) {
                 if (error) {
                     return console.log(error);
                 }
