@@ -1,4 +1,9 @@
 require("dotenv").config();
+
+//TODO: Need to set the default song and movie if nothing is given
+//TODO: Need to format log.txt
+//TODO: Write code to make this do something with the data it reads
+
 const fs = require("fs");
 const keys = require("./keys.js");
 const moment = require("moment");
@@ -10,14 +15,52 @@ const axios = require("axios");
 let input = process.argv;
 let command = input[2];
 let param = input[3];
-let movie = "Mr. Nobody";
-let song = "The Sign";
+let movie = undefined;
+let song = undefined;
+let artists = undefined;
 let output;
 
-//TODO: Need to parse through all the responses to show multiple show dates
 switch(command){
     case "concert-this":
-        let queryUrlBands = "https://rest.bandsintown.com/artists/" + param + "/events?app_id=codingbootcamp";
+        if (artists === undefined){
+            artists = "tool";
+        }
+        else {
+            artists = param;
+        }
+        concert();
+        break;
+    
+    case "spotify-this-song":
+        if (song === undefined){
+            song = "the sign";
+        }
+        else {
+            artists = param;
+        }
+        song();
+
+        break;
+
+    case "movie-this":
+        if (movie === undefined){
+            movie = "mr. nobody";
+        }
+        else {
+            movie = param;
+        }
+        movie();
+
+        break;
+
+        case "do-what-it-says":
+            random();
+            break;
+            //takes the text from inside the random.txt file and uses it to call a LIRI command
+}
+
+function concert(){
+    let queryUrlBands = "https://rest.bandsintown.com/artists/" + artists + "/events?app_id=codingbootcamp";
 
         axios.get(queryUrlBands).then(
             function(response) {
@@ -52,35 +95,34 @@ switch(command){
                 }
                 console.log(error.config);
             });
+            artists = undefined;
+}
 
-        break;
-    
-    case "spotify-this-song":
-        song = param;
-        spotify.search({ type: 'track', query: song}).then(function(response) {
+function song(){
+    spotify.search({ type: 'track', query: song}).then(function(response) {
 
-            for(var i=0; i < 5; i++){
+        for(var i=0; i < 5; i++){
 
-                output = "Artist: " + response.tracks.items[i].artists[0].name + " Song name: " + response.tracks.items[i].name + " Preview URL:  " + response.tracks.items[i].preview_url + " Album the song is on: " + response.tracks.items[i].album.name;
-                console.log(output);
+            output = "Artist: " + response.tracks.items[i].artists[0].name + " Song name: " + response.tracks.items[i].name + " Preview URL:  " + response.tracks.items[i].preview_url + " Album the song is on: " + response.tracks.items[i].album.name;
+            console.log(output);
 
-                fs.appendFile("log.txt", ", " + output, function(err) {
-                    if (err) {
-                        return console.log(err);
-                    }
-                });
+            fs.appendFile("log.txt", ", " + output, function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+            });
 
-            }
-            
+        }
+        
 
-        }).catch(function(err) {
-            console.log(err);
-        });
-        break;
+    }).catch(function(err) {
+        console.log(err);
+    });
+    song = undefined;
+}
 
-    case "movie-this":
-        movie = param;
-        let queryUrlOmdb = "http://www.omdbapi.com/?t="+ movie +"&y=&plot=short&apikey=trilogy";
+function movie(){
+    let queryUrlOmdb = "http://www.omdbapi.com/?t="+ movie +"&y=&plot=short&apikey=trilogy";
         
         axios.get(queryUrlOmdb).then(
             function(response) {
@@ -112,50 +154,36 @@ switch(command){
                 }
                 console.log(error.config);
             });
-        movie = "Mr. Nobody";
-        break;
-
-        case "do-what-it-says":
-            fs.readFile("random.txt", "utf8", function(err, data){
-                let random = data.split(",");
-                // command = data[0];
-                song = data[1]
-                //run the spotify search
-                spotify.search({ type: 'track', query: song}).then(function(response) {
-
-                    for(var i=0; i < 5; i++){
-        
-                        output = "Artist: " + response.tracks.items[i].artists[0].name + " Song name: " + response.tracks.items[i].name + " Preview URL:  " + response.tracks.items[i].preview_url + " Album the song is on: " + response.tracks.items[i].album.name;
-                        console.log(output);
-        
-                        fs.appendFile("log.txt", ", " + output, function(err) {
-                            if (err) {
-                                return console.log(err);
-                            }
-                        });
-        
-                    }
-                    
-        
-                }).catch(function(err) {
-                    console.log(err);
-                });
-                if (err) {
-                    return console.log(err);
-                }
-            })
-            break;
-            //takes the text from inside the random.txt file and uses it to call a LIRI command
+        movie = undefined;
 }
 
-//TODO: Need to set the default song and movie if nothing is given
-//append log.txt to contain what was in the output
-//TODO: Need to get the formated in log.txt
-// fs.appendFile("log.txt", ", " + output, function(err) {
-//     if (err) {
-//         return console.log(err);
-//     }
-// });
+function random(){
+    fs.readFile("random.txt", "utf8", function(err, data){
+        let random = data.split(",");
+        // command = data[0];
+        song = data[1]
+        //run the spotify search
+        spotify.search({ type: 'track', query: song}).then(function(response) {
 
-//read files will read what is in random.txt
-//TODO: Write code to make this do something with the data it reads
+            for(var i=0; i < 5; i++){
+
+                output = "Artist: " + response.tracks.items[i].artists[0].name + " Song name: " + response.tracks.items[i].name + " Preview URL:  " + response.tracks.items[i].preview_url + " Album the song is on: " + response.tracks.items[i].album.name;
+                console.log(output);
+
+                fs.appendFile("log.txt", ", " + output, function(err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                });
+
+            }
+            
+
+        }).catch(function(err) {
+            console.log(err);
+        });
+        if (err) {
+            return console.log(err);
+        }
+    })
+}
