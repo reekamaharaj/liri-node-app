@@ -1,5 +1,5 @@
 //TODO: Need to format log.txt
-//TODO: Rotten Tomato rating problem
+//TODO: Rotten Tomato rating problems
 
 require("dotenv").config();
 const fs = require("fs");
@@ -17,6 +17,8 @@ let movie = [];
 let song = [];
 let artist = [];
 let output;
+let artistInput;
+let songInput;
 
 if (command === "do-what-it-says") {
     random();
@@ -28,6 +30,7 @@ function switchCase() {
     switch (command) {
         case "concert-this":
             if (Array.isArray(param) && param.length) {
+                artistInput = String(param);
                 artist = param.join("").replace(/['"]+/g, "");
                 concertThis();
             } else {
@@ -38,6 +41,7 @@ function switchCase() {
 
         case "spotify-this-song":
             if (Array.isArray(param) && param.length) {
+                songInput = String(param);
                 song = param.join("").replace(/['"]+/g, "");
                 songThis();
             } else {
@@ -48,7 +52,8 @@ function switchCase() {
 
         case "movie-this":
             if (Array.isArray(param) && param.length) {
-                movie = param.join("").replace(/['"]+/g, "");
+                movieInput = String(param);
+                movie = param.join("+").replace(/['"]+/g, "");
                 movieThis();
             } else {
                 movie = "Mr.Nobody";
@@ -81,16 +86,13 @@ function concertThis() {
         .get(queryUrlBands)
         .then(function(response) {
             for (var i = 0; i < 4; i++) {
-                output = 
-                    "Venue: " +
-                    response.data[i].venue.name +
-                    ", Location: " +
-                    response.data[i].venue.city +
-                    ", " +
-                    response.data[i].venue.region +
-                    ", Date: " +
-                    moment(response.data[i].datetime).format("MM/DD/YYYY");
-                console.log(output);
+
+                output = "Concerts for " + artistInput;
+                console.group(output);
+                console.info("Venue: " + response.data[i].venue.name );
+                console.info("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.region);
+                console.info("Date: " + moment(response.data[i].datetime).format("MM/DD/YYYY"));
+                console.groupEnd(output);
 
                 fs.appendFile("log.txt", ", " + output, function(error) {
                     if (error) {
@@ -112,16 +114,13 @@ function songThis() {
         .search({ type: "track", query: song })
         .then(function(response) {
             for (var i = 0; i < 4; i++) {
-                output =
-                    "Artist: " +
-                    response.tracks.items[i].artists[0].name +
-                    " Song name: " +
-                    response.tracks.items[i].name +
-                    " Preview URL:  " +
-                    response.tracks.items[i].preview_url +
-                    " Album the song is on: " +
-                    response.tracks.items[i].album.name;
-                console.log(output);
+                output = "Song Input " + songInput;
+                console.group(output);
+                console.info("Artist: " + response.tracks.items[i].artists[0].name);
+                console.info("Song name: " + response.tracks.items[i].name);
+                console.info("Preview URL:  " + response.tracks.items[i].preview_url);
+                console.info("Album the song is on: " + response.tracks.items[i].album.name);
+                console.groupEnd(output);
 
                 fs.appendFile("log.txt", ", " + output, function(error) {
                     if (error) {
@@ -142,29 +141,21 @@ function movieThis() {
     axios
         .get(queryUrlOmdb)
         .then(function(response) {
-            output =
-                "Movie Title: " +
-                response.data.Title +
-                ", Movie Release Year: " +
-                response.data.Year +
-                ", IMDB Rating: " +
-                response.data.imdbRating +
-                ", Movie produced in: " +
-                response.data.Country +
-                "Language(s): " +
-                response.data.Language +
-                ", Movie plot: " +
-                response.data.Plot +
-                ", Actors: " +
-                response.data.Actors;
+            output =  "Movie Title: " + response.data.Title;
+            console.group(output);
+            console.info("Movie Release Year: " + response.data.Year);
+            console.info("IMDB Rating: " + response.data.imdbRating);
+            console.info("Movie produced in: " + response.data.Country);
+            console.info("Language(s): " + response.data.Language);
+            console.info("Movie plot: " + response.data.Plot);
+            console.info("Actors: " + response.data.Actors);
+            console.groupEnd(output);
 
             // rating = ", Rotten Tomatoes rating: " + response.data.Ratings[1].Value;
 
-            console.log(output);
-
-            fs.appendFile("log.txt", ", " + output, function(err) {
-                if (err) {
-                    return console.log(err);
+            fs.appendFile("log.txt", ", " + output, function(error) {
+                if (error) {
+                    return console.log(error);
                 }
             });
         })
