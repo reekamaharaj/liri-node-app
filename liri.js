@@ -1,6 +1,5 @@
-
 //TODO: Need to format log.txt
-//TODO: Write code to make this do something with the data it reads
+//TODO: Rotten Tomato rating problem
 
 require("dotenv").config();
 const fs = require("fs");
@@ -14,74 +13,83 @@ let input = process.argv.slice(2);
 let command = input[0];
 let param = input.slice(1);
 
-let movie = undefined;
-let song = undefined;
-let artists = undefined;
+let movie = [];
+let song = [];
+let artist = [];
 let output;
 
-if (command === "do-what-it-says"){
+if (command === "do-what-it-says") {
     random();
-}
-else {
+} else {
     switchCase();
 }
 
-function switchCase(){
-    switch(command){
+function switchCase() {
+    switch (command) {
         case "concert-this":
-                if (param === undefined){
-                    artists = "tool";
-                }
-                else {
-                    concertThis();
-                }
-                
+            if (Array.isArray(param) && param.length) {
+                artist = param.join("").replace(/['"]+/g, "");
+                concertThis();
+            } else {
+                artist = "tool";
+                concertThis();
+            }
             break;
-        
+
         case "spotify-this-song":
-                if (param === undefined){
-                    song = "thesign";
-                }
-                else {
-                    songThis();
-                }
-                
+            if (Array.isArray(param) && param.length) {
+                song = param.join("").replace(/['"]+/g, "");
+                songThis();
+            } else {
+                song = "thesign";
+                songThis();
+            }
             break;
-    
+
         case "movie-this":
-                if (param === undefined){
-                    movie = "Mr.Nobody";
-                }
-                else {
-                    movieThis();
-                }
+            if (Array.isArray(param) && param.length) {
+                movie = param.join("").replace(/['"]+/g, "");
+                movieThis();
+            } else {
+                movie = "Mr.Nobody";
+                movieThis();
+            }
             break;
-                //takes the text from inside the random.txt file and uses it to call a LIRI command
     }
 }
 
-function random(){
-    fs.readFile("random.txt", "utf8", function(error, data){
+function random() {
+    fs.readFile("random.txt", "utf8", function(error, data) {
         if (error) {
-            console.error('There was an error reading the file!', err);
+            console.error("There was an error reading the file!", err);
             return;
         }
         let randomTxt = data.split(",");
         command = randomTxt[0];
         param = randomTxt.slice(1);
         switchCase();
-    })
-};
+    });
+}
 
-//Again works for anything entered but not for the case where no input is given
-function concertThis(){
-    artists = param.join("").replace(/['"]+/g, '');
-    let queryUrlBands = "https://rest.bandsintown.com/artists/" + artists + "/events?app_id=codingbootcamp";
+function concertThis() {
+    let queryUrlBands =
+        "https://rest.bandsintown.com/artists/" +
+        artist +
+        "/events?app_id=codingbootcamp";
 
-        axios.get(queryUrlBands).then(
-            function(response) {
-                for(var i=0; i < 4; i++){
-                output = "Venue: " + response.data[i].venue.name + ", Location: " + response.data[i].venue.city + ", " + response.data[i].venue.region + ", Date: " + moment(response.data[i].datetime).format("MM/DD/YYYY");
+    axios
+        .get(queryUrlBands)
+        .then(function(response) {
+            for (var i = 0; i < 4; i++) {
+                output = 
+                    "Venue: " +
+                    response.data[i].venue.name +
+                    ", Location: " +
+                    response.data[i].venue.city +
+                    ", " +
+                    response.data[i].venue.region +
+                    ", Date: " +
+                    moment(response.data[i].datetime).format("MM/DD/YYYY");
                 console.log(output);
 
                 fs.appendFile("log.txt", ", " + output, function(error) {
@@ -90,56 +98,80 @@ function concertThis(){
                     }
                 });
             }
-            }).catch(function(error) {
-                if (error) {
-                    console.log(error.config);
-                }
-            });
-            artists = undefined;
+        })
+        .catch(function(error) {
+            if (error) {
+                console.log(error.config);
+            }
+        });
+    artist = undefined;
 }
 
-//works for songs entered but not for the default case. Probably the same problem that is happening for the movie function
-function songThis(){
-    song = param.join("").replace(/['"]+/g, '');
-    spotify.search({ type: 'track', query: song}).then(function(response) {
-        for(var i=0; i < 4; i++){
-            output = "Artist: " + response.tracks.items[i].artists[0].name + " Song name: " + response.tracks.items[i].name + " Preview URL:  " + response.tracks.items[i].preview_url + " Album the song is on: " + response.tracks.items[i].album.name;
-            console.log(output);
+function songThis() {
+    spotify
+        .search({ type: "track", query: song })
+        .then(function(response) {
+            for (var i = 0; i < 4; i++) {
+                output =
+                    "Artist: " +
+                    response.tracks.items[i].artists[0].name +
+                    " Song name: " +
+                    response.tracks.items[i].name +
+                    " Preview URL:  " +
+                    response.tracks.items[i].preview_url +
+                    " Album the song is on: " +
+                    response.tracks.items[i].album.name;
+                console.log(output);
 
-            fs.appendFile("log.txt", ", " + output, function(error) {
-                if (error) {
-                    return console.log(error);
-                }
-            });
-        }
-    }).catch(function(error) {
-        console.log(error);
-    });
+                fs.appendFile("log.txt", ", " + output, function(error) {
+                    if (error) {
+                        return console.log(error);
+                    }
+                });
+            }
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
     song = undefined;
 }
 
-//works but not for mr. nobody unless its manually entered without a space. but will accept other movie titles with multiple words. need to figure out what to do with the rotten tomatoes rating. Sometimes works but isn't on every movie, and it stops working. Might need an if loop to handle that. 
+function movieThis() {
+    let queryUrlOmdb =
+        "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+    axios
+        .get(queryUrlOmdb)
+        .then(function(response) {
+            output =
+                "Movie Title: " +
+                response.data.Title +
+                ", Movie Release Year: " +
+                response.data.Year +
+                ", IMDB Rating: " +
+                response.data.imdbRating +
+                ", Movie produced in: " +
+                response.data.Country +
+                "Language(s): " +
+                response.data.Language +
+                ", Movie plot: " +
+                response.data.Plot +
+                ", Actors: " +
+                response.data.Actors;
 
-function movieThis(){
-    movie = param.join("+").replace(/['"]+/g, '');
-    let queryUrlOmdb = "http://www.omdbapi.com/?t="+ movie +"&y=&plot=short&apikey=trilogy";
-        axios.get(queryUrlOmdb).then(
-            function(response) {
-                output = "Movie Title: " + response.data.Title + ", Movie Release Year: " + response.data.Year + ", IMDB Rating: " + response.data.imdbRating + ", Movie produced in: " + response.data.Country + "Language(s): " + response.data.Language + ", Movie plot: " + response.data.Plot + ", Actors: " + response.data.Actors;
+            // rating = ", Rotten Tomatoes rating: " + response.data.Ratings[1].Value;
 
-                // rating = ", Rotten Tomatoes rating: " + response.data.Ratings[1].Value;
+            console.log(output);
 
-                console.log(output);
-
-                fs.appendFile("log.txt", ", " + output, function(err) {
-                    if (err) {
-                        return console.log(err);
-                    }
-                });
-            }).catch(function(error) {
-                if (error) {
-                    console.log(error);
+            fs.appendFile("log.txt", ", " + output, function(err) {
+                if (err) {
+                    return console.log(err);
                 }
             });
-        movie = undefined;
+        })
+        .catch(function(error) {
+            if (error) {
+                console.log(error);
+            }
+        });
+    movie = undefined;
 }
