@@ -19,47 +19,63 @@ let song = undefined;
 let artists = undefined;
 let output;
 
-
-switch(command){
-    case "concert-this":
-            if (param === undefined){
-                artists = "tool";
-            }
-            else {
-                
-                artists = param.join("");
-            }
-            concertThis();
-        break;
-    
-    case "spotify-this-song":
-            if (param === undefined){
-                song = "thesign";
-            }
-            else {
-                song = param.join("");
-            }
-            songThis();
-        break;
-
-    case "movie-this":
-            if (param === undefined){
-                movie = "Mr.Nobody";
-            }
-            else {
-                movie = param.join("+");
-            }
-            movieThis();
-        break;
-
-        case "do-what-it-says":
-            random();
-            break;
-            //takes the text from inside the random.txt file and uses it to call a LIRI command
+if (command === "do-what-it-says"){
+    random();
 }
+else {
+    switchCase();
+}
+
+function switchCase(){
+    switch(command){
+        case "concert-this":
+                if (param === undefined){
+                    artists = "tool";
+                }
+                else {
+                    concertThis();
+                }
+                
+            break;
+        
+        case "spotify-this-song":
+                if (param === undefined){
+                    song = "thesign";
+                }
+                else {
+                    songThis();
+                }
+                
+            break;
+    
+        case "movie-this":
+                if (param === undefined){
+                    movie = "Mr.Nobody";
+                }
+                else {
+                    movieThis();
+                }
+            break;
+                //takes the text from inside the random.txt file and uses it to call a LIRI command
+    }
+}
+
+function random(){
+    fs.readFile("random.txt", "utf8", function(error, data){
+        if (error) {
+            console.error('There was an error reading the file!', err);
+            return;
+        }
+        let randomTxt = data.split(",");
+        command = randomTxt[0];
+        param = randomTxt.slice(1);
+        switchCase();
+    })
+};
 
 //Again works for anything entered but not for the case where no input is given
 function concertThis(){
+    artists = param.join("").replace(/['"]+/g, '');
     let queryUrlBands = "https://rest.bandsintown.com/artists/" + artists + "/events?app_id=codingbootcamp";
 
         axios.get(queryUrlBands).then(
@@ -84,6 +100,7 @@ function concertThis(){
 
 //works for songs entered but not for the default case. Probably the same problem that is happening for the movie function
 function songThis(){
+    song = param.join("").replace(/['"]+/g, '');
     spotify.search({ type: 'track', query: song}).then(function(response) {
         for(var i=0; i < 4; i++){
             output = "Artist: " + response.tracks.items[i].artists[0].name + " Song name: " + response.tracks.items[i].name + " Preview URL:  " + response.tracks.items[i].preview_url + " Album the song is on: " + response.tracks.items[i].album.name;
@@ -104,6 +121,7 @@ function songThis(){
 //works but not for mr. nobody unless its manually entered without a space. but will accept other movie titles with multiple words. need to figure out what to do with the rotten tomatoes rating. Sometimes works but isn't on every movie, and it stops working. Might need an if loop to handle that. 
 
 function movieThis(){
+    movie = param.join("+").replace(/['"]+/g, '');
     let queryUrlOmdb = "http://www.omdbapi.com/?t="+ movie +"&y=&plot=short&apikey=trilogy";
         axios.get(queryUrlOmdb).then(
             function(response) {
@@ -124,17 +142,4 @@ function movieThis(){
                 }
             });
         movie = undefined;
-}
-
-function random(){
-    fs.readFile("random.txt", "utf8", function(error, data){
-        if (error) {
-            console.error('There was an error reading the file!', err);
-            return;
-        }
-        let randomTxt = data.split(",");
-        command = randomTxt[0];
-        param = randomTxt[1];
-        console.log("Command was " + command + " Input was " + param);
-    })
 }
