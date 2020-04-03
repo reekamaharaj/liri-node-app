@@ -1,4 +1,5 @@
-# Liri Node App (Language Interpretation and Recognition Interface)
+# Liri Node App 
+# (Language Interpretation and Recognition Interface)
 
 LIRI is a command line nodeJS app created to accept a search command and parameter and will return relevant data.
 
@@ -6,20 +7,20 @@ LIRI is a command line nodeJS app created to accept a search command and paramet
 
 LIRI will search the Bands in Town, OMDB and Spotify APIs based on the command and parameter provided and return some basic information back in the console. The information will also be logged in the log.txt file.
 
-LIRI will accept the following commands
+LIRI will accept the following commands:
 * concert-this
 * movie-this
 * spotify-this-song
 * do-what-it-says
 
-**'concert-this <artist/band name here>`**
+**`concert-this <artist/band name here>`**
 This will search the Bands in Town API and return 4 concerts for the artist/band entered. 
 
-    Each item will include the following information:
-    - Artist/band requested
-    - Name of the venue
-    - City and region of the concert
-    - The date of the concert
+Each item will include the following information:
+* Artist/band requested
+* Name of the venue
+* City and region of the concert
+* The date of the concert
 
 **`spotify-this-song <song name here>`**
     This will search the Spotify API and return 4 results for the song name entered.
