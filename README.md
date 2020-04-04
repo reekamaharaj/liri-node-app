@@ -25,7 +25,6 @@ Each item will include the following information:
 
 If the user does not enter a song name LIRI will use Tool.
 
-**demo**  
 ![](gif/concert-this.gif)
 
 **`node liri.js spotify-this-song <song name here>`**  
@@ -39,7 +38,6 @@ Each item will include the following information:
 
 If the user does not enter a song name LIRI will use "The Sign" by Ace of Base.
 
-**demo**  
 ![](gif/spotify-this-song-this.gif)
 
 **`node liri.js movie-this <movie name here>`**  
@@ -57,13 +55,11 @@ The results will include the following information:
 
 If the user does not enter a song name LIRI will use Mr. Nobody
 
-**demo**  
 ![](gif/movie-this.gif)
 
 **`node liri.js do-what-it-says`**  
 This will run one of the previous searches and give back results for a predetermined search parameter. This command will look in the random.txt file for command and search to execute.
 
-**demo**  
 ![](gif/do-what-it-says-this.gif)
 
 ## Tech used
