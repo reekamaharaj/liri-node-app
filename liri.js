@@ -16,6 +16,7 @@ let artist = [];
 let output;
 let artistInput;
 let songInput;
+let movieInput;
 let outputTxt;
 
 if (command === "do-what-it-says") {
@@ -32,6 +33,7 @@ function switchCase() {
                 artist = param.join("").replace(/['"]+/g, "");
                 concertThis();
             } else {
+                artistInput = "tool";
                 artist = "tool";
                 concertThis();
             }
@@ -43,6 +45,7 @@ function switchCase() {
                 song = param.join("").replace(/['"]+/g, "");
                 songThis();
             } else {
+                songInput = "thesign";
                 song = "thesign";
                 songThis();
             }
@@ -54,6 +57,7 @@ function switchCase() {
                 movie = param.join("+").replace(/['"]+/g, "");
                 movieThis();
             } else {
+                movieInput = "Mr.Nobody";
                 movie = "Mr.Nobody";
                 movieThis();
             }

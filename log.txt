@@ -206,3 +206,389 @@ Movie produced in: USA
  Preview URL:  https://p.scdn.co/mp3-preview/99c791194bbd4e5f315ca8964babf0b69bc520b3?cid=88c64f982a904d3cb3ecab4e96d23bd0
  Album the song is on: Beautiful Dreams
  
+ Concerts for undefined
+ Venue: Rogers Place
+Location: Edmonton, AB
+Date: 06/02/2020
+
+ Concerts for undefined
+ Venue: MTS Centre
+Location: Winnipeg, MB
+Date: 06/04/2020
+
+ Concerts for undefined
+ Venue: Target Center
+Location: Minneapolis, MN
+Date: 06/06/2020
+
+ Concerts for undefined
+ Venue: Denny Sanford Premier Center
+Location: Sioux Falls, SD
+Date: 06/07/2020
+
+ Concerts for undefined
+ Venue: Rogers Place
+Location: Edmonton, AB
+Date: 06/02/2020
+
+ Concerts for undefined
+ Venue: MTS Centre
+Location: Winnipeg, MB
+Date: 06/04/2020
+
+ Concerts for undefined
+ Venue: Target Center
+Location: Minneapolis, MN
+Date: 06/06/2020
+
+ Concerts for undefined
+ Venue: Denny Sanford Premier Center
+Location: Sioux Falls, SD
+Date: 06/07/2020
+
+ Concerts for undefined
+ Venue: Rogers Place
+Location: Edmonton, AB
+Date: 06/02/2020
+
+ Concerts for undefined
+ Venue: Denny Sanford Premier Center
+Location: Sioux Falls, SD
+Date: 06/07/2020
+
+ Concerts for undefined
+ Venue: Target Center
+Location: Minneapolis, MN
+Date: 06/06/2020
+
+ Concerts for undefined
+ Venue: MTS Centre
+Location: Winnipeg, MB
+Date: 06/04/2020
+
+ Concerts for badflower
+ Venue: The Woodlands
+Location: Dover, DE
+Date: 06/18/2020
+
+ Concerts for badflower
+ Venue: White River Amphitheatre
+Location: Auburn, WA
+Date: 07/15/2020
+
+ Concerts for badflower
+ Venue: Firefly Music Festival
+Location: Dover, DE
+Date: 06/19/2020
+
+ Concerts for badflower
+ Venue: Ohio State Reformatory
+Location: Mansfield, OH
+Date: 07/10/2020
+
+ Concerts for undefined
+ Venue: Rogers Place
+Location: Edmonton, AB
+Date: 06/02/2020
+
+ Concerts for undefined
+ Venue: MTS Centre
+Location: Winnipeg, MB
+Date: 06/04/2020
+
+ Concerts for undefined
+ Venue: Target Center
+Location: Minneapolis, MN
+Date: 06/06/2020
+
+ Concerts for undefined
+ Venue: Denny Sanford Premier Center
+Location: Sioux Falls, SD
+Date: 06/07/2020
+
+ Concerts for undefined
+ Venue: Rogers Place
+Location: Edmonton, AB
+Date: 06/02/2020
+
+ Concerts for undefined
+ Venue: MTS Centre
+Location: Winnipeg, MB
+Date: 06/04/2020
+
+ Concerts for undefined
+ Venue: Target Center
+Location: Minneapolis, MN
+Date: 06/06/2020
+
+ Concerts for undefined
+ Venue: Denny Sanford Premier Center
+Location: Sioux Falls, SD
+Date: 06/07/2020
+
+ Movie Title: Mr. Nobody
+ Movie Release Year: 2009
+ IMDB Rating: 7.8Rotten Tomatoes rating: 67%
+Movie produced in: Belgium, Germany, Canada, France, UK, Luxembourg
+ Language(s): English, Mohawk
+ Movie plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+ Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+ Rotten Tomatoes rating: 67%
+
+ Song Input undefined
+ Artist: Ace of Base
+ Song name: The Sign
+ Preview URL:  https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: The Sign
+ 
+ Song Input undefined
+ Artist: Black Sabbath
+ Song name: The Sign of the Southern Cross - 2008 Remaster
+ Preview URL:  https://p.scdn.co/mp3-preview/8253e50eb6d3a0a4a59fa0a64c4b05d2426e0324?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Mob Rules (2008 Remaster)
+ 
+ Song Input undefined
+ Artist: Killswitch Engage
+ Song name: The Signal Fire
+ Preview URL:  https://p.scdn.co/mp3-preview/5a7c2686426faf51625474fc90383b070607958f?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Atonement
+ 
+ Song Input undefined
+ Artist: Aimnu Kolec
+ Song name: The Sign
+ Preview URL:  https://p.scdn.co/mp3-preview/3f4303bf8caefb1dd086557bf218359891bfb2ff?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: The Sign
+ 
+ Song Input undefined
+ Artist: Ace of Base
+ Song name: The Sign
+ Preview URL:  https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: The Sign
+ 
+ Song Input undefined
+ Artist: Killswitch Engage
+ Song name: The Signal Fire
+ Preview URL:  https://p.scdn.co/mp3-preview/5a7c2686426faf51625474fc90383b070607958f?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Atonement
+ 
+ Song Input undefined
+ Artist: Black Sabbath
+ Song name: The Sign of the Southern Cross - 2008 Remaster
+ Preview URL:  https://p.scdn.co/mp3-preview/8253e50eb6d3a0a4a59fa0a64c4b05d2426e0324?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Mob Rules (2008 Remaster)
+ 
+ Song Input undefined
+ Artist: Aimnu Kolec
+ Song name: The Sign
+ Preview URL:  https://p.scdn.co/mp3-preview/3f4303bf8caefb1dd086557bf218359891bfb2ff?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: The Sign
+ 
+ Concerts for undefined
+ Venue: Rogers Place
+Location: Edmonton, AB
+Date: 06/02/2020
+
+ Concerts for undefined
+ Venue: MTS Centre
+Location: Winnipeg, MB
+Date: 06/04/2020
+
+ Concerts for undefined
+ Venue: Target Center
+Location: Minneapolis, MN
+Date: 06/06/2020
+
+ Concerts for undefined
+ Venue: Denny Sanford Premier Center
+Location: Sioux Falls, SD
+Date: 06/07/2020
+
+ Concerts for badflower
+ Venue: The Woodlands
+Location: Dover, DE
+Date: 06/18/2020
+
+ Concerts for badflower
+ Venue: White River Amphitheatre
+Location: Auburn, WA
+Date: 07/15/2020
+
+ Concerts for badflower
+ Venue: Ohio State Reformatory
+Location: Mansfield, OH
+Date: 07/10/2020
+
+ Concerts for badflower
+ Venue: Firefly Music Festival
+Location: Dover, DE
+Date: 06/19/2020
+
+ Concerts for tool
+ Venue: Rogers Place
+Location: Edmonton, AB
+Date: 06/02/2020
+
+ Concerts for tool
+ Venue: Denny Sanford Premier Center
+Location: Sioux Falls, SD
+Date: 06/07/2020
+
+ Concerts for tool
+ Venue: Target Center
+Location: Minneapolis, MN
+Date: 06/06/2020
+
+ Concerts for tool
+ Venue: MTS Centre
+Location: Winnipeg, MB
+Date: 06/04/2020
+
+ Concerts for badflower
+ Venue: The Woodlands
+Location: Dover, DE
+Date: 06/18/2020
+
+ Concerts for badflower
+ Venue: Firefly Music Festival
+Location: Dover, DE
+Date: 06/19/2020
+
+ Concerts for badflower
+ Venue: Ohio State Reformatory
+Location: Mansfield, OH
+Date: 07/10/2020
+
+ Concerts for badflower
+ Venue: White River Amphitheatre
+Location: Auburn, WA
+Date: 07/15/2020
+
+ Song Input "I Want it That Way"
+ Artist: Backstreet Boys
+ Song name: I Want It That Way
+ Preview URL:  https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: The Hits--Chapter One
+ 
+ Song Input "I Want it That Way"
+ Artist: Mick Jensen
+ Song name: I Want It That Way
+ Preview URL:  https://p.scdn.co/mp3-preview/f8181f66713983fab073e133e23c741acbe00d75?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: I Want It That Way
+ 
+ Song Input "I Want it That Way"
+ Artist: Anthem Lights
+ Song name: I Want It That Way
+ Preview URL:  https://p.scdn.co/mp3-preview/4a163fbfa2dbbe4433f277e0e7395dca656364f5?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Covers Part IV
+ 
+ Song Input "I Want it That Way"
+ Artist: Tyler and Mark
+ Song name: I Want It That Way
+ Preview URL:  https://p.scdn.co/mp3-preview/99c791194bbd4e5f315ca8964babf0b69bc520b3?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Beautiful Dreams
+ 
+ Concerts for tool
+ Venue: Rogers Place
+Location: Edmonton, AB
+Date: 06/02/2020
+
+ Concerts for tool
+ Venue: MTS Centre
+Location: Winnipeg, MB
+Date: 06/04/2020
+
+ Concerts for tool
+ Venue: Target Center
+Location: Minneapolis, MN
+Date: 06/06/2020
+
+ Concerts for tool
+ Venue: Denny Sanford Premier Center
+Location: Sioux Falls, SD
+Date: 06/07/2020
+
+ Concerts for badflower
+ Venue: The Woodlands
+Location: Dover, DE
+Date: 06/18/2020
+
+ Concerts for badflower
+ Venue: Firefly Music Festival
+Location: Dover, DE
+Date: 06/19/2020
+
+ Concerts for badflower
+ Venue: Ohio State Reformatory
+Location: Mansfield, OH
+Date: 07/10/2020
+
+ Concerts for badflower
+ Venue: White River Amphitheatre
+Location: Auburn, WA
+Date: 07/15/2020
+
+ Song Input thesign
+ Artist: Ace of Base
+ Song name: The Sign
+ Preview URL:  https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: The Sign
+ 
+ Song Input thesign
+ Artist: Aimnu Kolec
+ Song name: The Sign
+ Preview URL:  https://p.scdn.co/mp3-preview/3f4303bf8caefb1dd086557bf218359891bfb2ff?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: The Sign
+ 
+ Song Input thesign
+ Artist: Black Sabbath
+ Song name: The Sign of the Southern Cross - 2008 Remaster
+ Preview URL:  https://p.scdn.co/mp3-preview/8253e50eb6d3a0a4a59fa0a64c4b05d2426e0324?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Mob Rules (2008 Remaster)
+ 
+ Song Input thesign
+ Artist: Killswitch Engage
+ Song name: The Signal Fire
+ Preview URL:  https://p.scdn.co/mp3-preview/5a7c2686426faf51625474fc90383b070607958f?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Atonement
+ 
+ Song Input faint
+ Artist: Linkin Park
+ Song name: Faint
+ Preview URL:  https://p.scdn.co/mp3-preview/9ed8538f21075f98c8523bd4bd70e01bc7ceb1a0?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Meteora
+ 
+ Song Input faint
+ Artist: Memphis May Fire
+ Song name: Faint
+ Preview URL:  https://p.scdn.co/mp3-preview/703aeea93c889cc0c361374c019c5b1ea6f4a381?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: Faint
+ 
+ Song Input faint
+ Artist: Shrimpnose
+ Song name: Faintly
+ Preview URL:  https://p.scdn.co/mp3-preview/6a1309278329dd97aaa541a2fe042890aa6c6f8a?cid=88c64f982a904d3cb3ecab4e96d23bd0
+ Album the song is on: 11:11(am)
+ 
+ Song Input faint
+ Artist: Rise Against
+ Song name: Faint Resemblance - Ghost Note Symphonies
+ Preview URL:  null
+ Album the song is on: The Ghost Note Symphonies, Vol.1
+ 
+ Movie Title: Mr. Nobody
+ Movie Release Year: 2009
+ IMDB Rating: 7.8Rotten Tomatoes rating: 67%
+Movie produced in: Belgium, Germany, Canada, France, UK, Luxembourg
+ Language(s): English, Mohawk
+ Movie plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+ Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+ Rotten Tomatoes rating: 67%
+
+ Movie Title: Up
+ Movie Release Year: 2009
+ IMDB Rating: 8.2Rotten Tomatoes rating: 98%
+Movie produced in: USA
+ Language(s): English
+ Movie plot: 78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.
+ Actors: Edward Asner, Christopher Plummer, Jordan Nagai, Bob Peterson
+ Rotten Tomatoes rating: 98%
