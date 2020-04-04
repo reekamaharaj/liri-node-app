@@ -68,7 +68,7 @@ function switchCase() {
 function random() {
     fs.readFile("random.txt", "utf8", function(error, data) {
         if (error) {
-            console.error("There was an error reading the file!", err);
+            console.error("There was an error reading the file!", error);
             return;
         }
         let randomTxt = data.split(",");
