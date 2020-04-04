@@ -14,7 +14,7 @@ LIRI will accept the following commands:
 
 ## How to use
 
-**`node liri.js concert-this <artist/band name here>`**
+**`node liri.js concert-this <artist/band name here>`**  
 This will search the Bands in Town API and return 4 concerts for the artist/band entered. (Uses the Axios package to get data from Bands in Town
 
 Each item will include the following information:
@@ -25,10 +25,10 @@ Each item will include the following information:
 
 If the user does not enter a song name LIRI will use Tool.
 
-**demo**
+**demo**  
 ![](gif/concert-this.gif)
 
-**`node liri.js spotify-this-song <song name here>`**
+**`node liri.js spotify-this-song <song name here>`**  
 This will search the Spotify API and return 4 results for the song name entered. (Uses the Spotify package to get data from Spotify)
 
 Each item will include the following information: 
@@ -39,10 +39,10 @@ Each item will include the following information:
 
 If the user does not enter a song name LIRI will use "The Sign" by Ace of Base.
 
-**demo**
+**demo**  
 ![](gif/spotify-this-song-this.gif)
 
-**`node liri.js movie-this <movie name here>`**
+**`node liri.js movie-this <movie name here>`**  
 This will search the OMDB API and return data on the movie entered. (Uses the Axios package to get data from OMDB)
 
 The results will include the following information:
@@ -57,13 +57,13 @@ The results will include the following information:
 
 If the user does not enter a song name LIRI will use Mr. Nobody
 
-**demo**
+**demo**  
 ![](gif/movie-this.gif)
 
-**`node liri.js do-what-it-says`**
+**`node liri.js do-what-it-says`**  
 This will run one of the previous searches and give back results for a predetermined search parameter. This command will look in the random.txt file for command and search to execute.
 
-**demo**
+**demo**  
 ![](gif/do-what-it-says-this.gif)
 
 ## Tech used
