@@ -78,4 +78,4 @@ This will run one of the previous searches and give back results for a predeterm
 -   [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
 
 ## Role in App Development
-LIRI was created from create scratch by one developer.
+LIRI was created from scratch by one developer.
