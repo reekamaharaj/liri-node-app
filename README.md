@@ -60,7 +60,7 @@ If the user does not enter a song name LIRI will use Mr. Nobody
 **`node liri.js do-what-it-says`**  
 This will run one of the previous searches and give back results for a predetermined search parameter. This command will look in the random.txt file for command and search to execute.
 
-![](gif/do-what-it-says-this.gif)
+![](gif/do-what-it-says.gif)
 
 ## Tech used
 
