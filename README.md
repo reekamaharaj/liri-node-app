@@ -38,7 +38,7 @@ Each item will include the following information:
 
 If the user does not enter a song name LIRI will use "The Sign" by Ace of Base.
 
-![](gif/spotify-this-song-this.gif)
+![](gif/spotify-this-song.gif)
 
 **`node liri.js movie-this <movie name here>`**  
 This will search the OMDB API and return data on the movie entered. (Uses the Axios package to get data from OMDB)
