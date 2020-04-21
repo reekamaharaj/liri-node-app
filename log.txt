@@ -1,0 +1,40 @@
+
+ Concerts for tool
+ Venue: Tacoma Dome
+Location: Tacoma, WA
+Date: 05/29/2020
+
+ Concerts for tool
+ Venue: Rogers Arena
+Location: Vancouver, BC
+Date: 05/31/2020
+
+ Concerts for tool
+ Venue: Rogers Place
+Location: Edmonton, AB
+Date: 06/02/2020
+
+ Concerts for tool
+ Venue: MTS Centre
+Location: Winnipeg, MB
+Date: 06/04/2020
+
+ Concerts for badflower
+ Venue: Dos Equis Pavilion
+Location: Dallas, TX
+Date: 05/24/2020
+
+ Concerts for badflower
+ Venue: The Woodlands
+Location: Dover, DE
+Date: 06/18/2020
+
+ Concerts for badflower
+ Venue: Firefly Music Festival
+Location: Dover, DE
+Date: 06/19/2020
+
+ Concerts for badflower
+ Venue: Ohio State Reformatory
+Location: Mansfield, OH
+Date: 07/10/2020

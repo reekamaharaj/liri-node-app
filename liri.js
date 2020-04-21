@@ -62,13 +62,16 @@ function switchCase() {
                 movieThis();
             }
             break;
+        
+        default:
+            console.log("Please use one of the following commands \n concert-this <artist/band name here> \n spotify-this-song <song name here> \n movie-this <movie name here> \n do-what-it-says");
     }
 }
 
 function random() {
     fs.readFile("random.txt", "utf8", function(error, data) {
         if (error) {
-            console.error("There was an error reading the file!", error);
+            console.error("There was an error reading the file!");
             return;
         }
         let randomTxt = data.split(",");
@@ -99,14 +102,14 @@ function concertThis() {
 
                 fs.appendFile("log.txt", "\r\n " + outputTxt, function(error) {
                     if (error) {
-                        return console.log(error);
+                        return console.log("This didn't work. Please contact support.");
                     }
                 });
             }
         })
         .catch(function(error) {
             if (error) {
-                console.log(error.config);
+                console.log("Please try again, we could not find what you were looking for.");
             }
         });
     artist = undefined;
@@ -135,7 +138,7 @@ function songThis() {
             }
         })
         .catch(function(error) {
-            console.log(error);
+            console.log("Please try again, we could not find what you were looking for.");
         });
     song = undefined;
 }
@@ -167,7 +170,7 @@ function movieThis() {
         })
         .catch(function(error) {
             if (error) {
-                console.log(error);
+                console.log("Please try again, we could not find what you were looking for.");
             }
         });
     movie = undefined;
