@@ -64,7 +64,7 @@ This will run one of the previous searches and give back results for a predeterm
 
 ## Tech used
 
--   Visual Studio
+-   Visual Studios
 -   JavaScript
 -   Node.js
 -   [Axios](https://www.npmjs.com/package/axios)
